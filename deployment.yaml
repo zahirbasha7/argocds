@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: hello-python
-        image: ./hello-python:latest
+        image: index.docker.io/zahirbasha/demo:hellopython
         imagePullPolicy: Never
         ports:
         - containerPort: 5000
