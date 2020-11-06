@@ -1,19 +1,21 @@
-
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-python
-  namespace: project2
 spec:
-  replicas: 4
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: hello-python
   template:
     metadata:
       labels:
         app: hello-python
     spec:
       containers:
-      - name: hello-python
-        image: index.docker.io/zahirbasha/demo:hellopython
-        imagePullPolicy: Always
+      # modify the following line with your Docker Hub account name
+      - image: index.docker.io/zahirbasha/demo:hellopython
+        name: hello-python
         ports:
-        - containerPort: 5000
+        - containerPort: 8080
