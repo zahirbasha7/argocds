@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       # modify the following line with your Docker Hub account name
-      - image: index.docker.io/zahirbasha/demo:hellopython
+      - image: index.docker.io/zahirbasha/argocd:hellopythontag
         name: hello-python
         ports:
         - containerPort: 8080
